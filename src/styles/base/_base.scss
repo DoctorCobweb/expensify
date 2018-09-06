@@ -1,0 +1,19 @@
+// we use 'rem' scaling units, 1rem = 16px
+
+html {
+  font-size: 62.5%; // conversion factor = 1rem(16px) * 0.625 = 10px
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: $m-size; // (16px)
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
