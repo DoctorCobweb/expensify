@@ -14,17 +14,12 @@ const store = configureStore();
 store.subscribe(() => {
   const state = store.getState();
   const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-  console.log(visibleExpenses);
+  // console.log(visibleExpenses);
 });
 
-store.dispatch(addExpense({ description:'water bill', amount: 1000, createdAt: 2000 }));
-store.dispatch(addExpense({ description:'gas bill', amount: 1457, createdAt: 2079 }));
-store.dispatch(setTextFilter('bill'));
-store.dispatch(setTextFilter('water'));
-
-setTimeout(() => {
-  store.dispatch(setTextFilter('bill'));
-}, 3000);
+store.dispatch(addExpense({ description:'water bill', amount: 4500}));
+store.dispatch(addExpense({ description:'gas bill', createdAt: 1000 }));
+store.dispatch(addExpense({ description:'rent', amount: 109500}));
 
 // the provider will provide access to the store
 // for every component in our app
