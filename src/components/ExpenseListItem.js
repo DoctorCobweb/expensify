@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 const ExpenseListItem = ({ description, amount, createdAt, id }) => {
   // console.log('props', dispatch);
   return (
-    <li>
+    <div>
       <Link to={`/edit/${id}`}>
         <h3>{description}</h3>
       </Link>
       <p>{amount}</p>
       <p>{createdAt}</p>
-    </li>
+    </div>
   );
 };
 export default ExpenseListItem;
