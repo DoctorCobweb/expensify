@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should correclty display for multiple-selected expenses 1`] = `
+<div>
+  <p>
+    Viewing 
+     expenses totalling 
+    $10,951.00
+  </p>
+</div>
+`;
+
+exports[`should correclty display for one selected expense 1`] = `
+<div>
+  <p>
+    Viewing 
+     expenses totalling 
+    $1.22
+  </p>
+</div>
+`;

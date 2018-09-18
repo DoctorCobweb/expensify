@@ -24,7 +24,6 @@ store.dispatch(addExpense({ description:'rent', amount: 109500}));
 
 // the provider will provide access to the store
 // for every component in our app
-
 const jsx = (
   <Provider store={store}>
     <AppRouter />
