@@ -10,9 +10,9 @@ export const ExpensesSummary = (props) => {
   return (
     <div>
       { count === 1 ? 
-          <p>Viewing {count} expense totalling {total}</p>
+          <h1>Viewing {count} expense totalling {total}</h1>
           :
-          <p>Viewing {count} expenses totalling {total}</p>
+          <h1>Viewing {count} expenses totalling {total}</h1>
       }
     </div>
   );
@@ -26,4 +26,6 @@ const mapStateToProps = (state) => {
   };
 };
 
+
+// get access to the state via props by calling 'connect' and passing in mapStateToProps
 export default connect(mapStateToProps)(ExpensesSummary);

@@ -2,20 +2,20 @@
 
 exports[`should correclty display for multiple-selected expenses 1`] = `
 <div>
-  <p>
+  <h1>
     Viewing 
      expenses totalling 
     $10,951.00
-  </p>
+  </h1>
 </div>
 `;
 
 exports[`should correclty display for one selected expense 1`] = `
 <div>
-  <p>
+  <h1>
     Viewing 
      expenses totalling 
     $1.22
-  </p>
+  </h1>
 </div>
 `;
