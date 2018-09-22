@@ -8,7 +8,7 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 import './firebase/firebase';
-import './playground/promises';
+// import './playground/promises';
 
 const store = configureStore();
 
@@ -18,7 +18,7 @@ store.subscribe(() => {
   // console.log(visibleExpenses);
 });
 
-
+// dummy data
 // store.dispatch(addExpense({ description:'water bill', amount: 4500}));
 // store.dispatch(addExpense({ description:'gas bill', createdAt: 1000 }));
 // store.dispatch(addExpense({ description:'rent', amount: 109500}));
@@ -31,8 +31,10 @@ const jsx = (
   </Provider>
 );
 
+// make loading screen whilst app fetches data from firebase
 ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
 
+// after successful expenses fetch, change to app main screen
 store.dispatch(startSetExpenses()).then(() => {
   ReactDOM.render(jsx , document.getElementById('app'));
 });
