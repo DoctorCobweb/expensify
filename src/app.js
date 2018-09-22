@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import AppRouter from './routers/AppRouter';
-import { addExpense } from './actions/expenses';
-import getVisibleExpenses from './selectors/expenses';
+import { startSetExpenses } from './actions/expenses';
 import configureStore from './store/configureStore';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
@@ -20,9 +19,9 @@ store.subscribe(() => {
 });
 
 
-store.dispatch(addExpense({ description:'water bill', amount: 4500}));
-store.dispatch(addExpense({ description:'gas bill', createdAt: 1000 }));
-store.dispatch(addExpense({ description:'rent', amount: 109500}));
+// store.dispatch(addExpense({ description:'water bill', amount: 4500}));
+// store.dispatch(addExpense({ description:'gas bill', createdAt: 1000 }));
+// store.dispatch(addExpense({ description:'rent', amount: 109500}));
 
 // the provider will provide access to the store
 // for every component in our app
@@ -31,4 +30,9 @@ const jsx = (
     <AppRouter />
   </Provider>
 );
-ReactDOM.render(jsx ,document.getElementById('app'));
+
+ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+
+store.dispatch(startSetExpenses()).then(() => {
+  ReactDOM.render(jsx , document.getElementById('app'));
+});
