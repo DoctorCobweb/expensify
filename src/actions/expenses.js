@@ -47,12 +47,10 @@ export const removeExpense = ({ id } = {}) => ({
 });
 
 // Expense removal challenge
-
 // 1. create startRemoveExpense (same call signature as removeExpense)
 // 2. test startRemoveExpense with "should remove expenses from firebase"
 // 3. use startRemoveExpense in EditExpensePage instead of removeExpense
 // 4. adjust EditExpensePage tests
-
 export const startRemoveExpense = ({ id } = {}) => {
   return (dispatch) => {
     return database.ref(`expenses/${id}`)
@@ -71,6 +69,22 @@ export const editExpense = (id, updates) => ({
   updates
 });
 
+// expense update challenge
+// 1. create startEditExpense (same call sig as editExpense)
+// 2. test startEditExpense with 'should edit expenses from firebase'
+// 3. use startEditExpense in EditExpensePage instead of editExpense
+// 4. adjust EditExpensePage tests
+export const startEditExpense = (id, updates) => {
+  return (dispatch) => {
+    return database.ref(`expenses/${id}`).update(updates)
+      .then(() => {
+        dispatch(editExpense(id, updates));
+      }).catch((e) => {
+        console.log(e);
+      });
+  };
+};
+
 // SET_EXPENSES
 export const setExpenses = (expenses) => ({
   type: 'SET_EXPENSES',
@@ -81,7 +95,6 @@ export const setExpenses = (expenses) => ({
 // 1. fetch all expense data once
 // 2. parse that data into an array
 // 3. dispatch SET_EXPENSES
-//
 // our async action which actually fetches the data
 export const startSetExpenses = () => {
   return (dispatch) => {
