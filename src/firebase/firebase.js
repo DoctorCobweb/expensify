@@ -3,6 +3,9 @@
 import * as firebase from 'firebase';
 import moment from 'moment';
 
+// use a provider to handle authentication via google
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
 // from firebase console
 const config = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -17,7 +20,7 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-export { firebase, database as default };
+export { firebase, googleAuthProvider, database as default };
 
 // // child_removed
 // database.ref('expenses').on('child_removed', (snapshot) => {
