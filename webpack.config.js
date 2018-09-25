@@ -15,7 +15,7 @@ module.exports = (env) => {
   const CSSExtract = new ExtractTextPlugin('styles.css');
 
   return {
-    entry: "./src/app.js",
+    entry: ['babel-polyfill', './src/app.js'],
     output: {
       // has to be an ABSOLUTE PATH here.
       // need to use path.join because paths and folders are written/handled

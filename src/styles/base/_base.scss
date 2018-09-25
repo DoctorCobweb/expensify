@@ -1,12 +1,19 @@
 // we use 'rem' scaling units, 1rem = 16px
 
+// universal selector
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%; // conversion factor = 1rem(16px) * 0.625 = 10px
 }
 
 body {
+  color: $dark-grey;
   font-family: Helvetica, Arial, sans-serif;
   font-size: $m-size; // (16px)
+  line-height: 1.6;
 }
 
 button {
